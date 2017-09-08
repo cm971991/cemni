@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 342542 */
+    src: url('//at.alicdn.com/t/font_5xn3iqww8nu680k9.eot');
+    src: url('//at.alicdn.com/t/font_5xn3iqww8nu680k9.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_5xn3iqww8nu680k9.woff') format('woff'),
+    url('//at.alicdn.com/t/font_5xn3iqww8nu680k9.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_5xn3iqww8nu680k9.svg#iconfont') format('svg');
+}
+
+.icon-arrow {
+    font-family: 'iconfont', serif;
+    font-size: 20px;
+    color: #000000;
+}
+.icon-arrow:before {
+    content: attr(icon);
+}
+
+.icon-dianying {
+    font-family: 'iconfont', serif;
+    font-size: 20px;
+    color: #fff;
+}
+.icon-dianying:before {
+    content: attr(icon);
+}
+
+.icon-xing {
+    font-family: 'iconfont', serif;
+}
+.icon-xing:before {
+    content: attr(icon);
+}
+
+.icon-dianzan {
+    font-family: 'iconfont', serif;
+}
+.icon-dianzan:before {
+    content: attr(icon);
+}
+
+.icon-zan {
+    font-family: 'iconfont', serif;
+}
+.icon-zan:before {
+    content: attr(icon);
+}
