@@ -4,6 +4,30 @@
   position: fixed;
   background: url('../../../assets/images/common/bg.png') no-repeat 0 0;
   background-size: 100% 100%;
+  //.bmg {
+  //  width: 58px;
+  //  height: 58px;
+  //  position: fixed;
+  //  right: 30px;
+  //  top: 30px;
+  //  .bmg-start {
+  //    width: 58px;
+  //    height: 58px;
+  //    animation: 3s linear infinite CDturn;
+  //  }
+  //  .bmg-stop {
+  //    width: 58px;
+  //    height: 58px;
+  //  }
+  //  @keyframes CDturn {
+  //    from {
+  //      transform: rotate(0deg)
+  //    }
+  //    to {
+  //      transform: rotate(360deg)
+  //    }
+  //  }
+  //}
   .logo {
     width: 298px;
     height: 28px;
@@ -26,7 +50,7 @@
       transform: translateY(-40%);
       & > div {
         height: 10%;
-        padding: 4px 90px;
+        padding: 0 90px;
       }
       input {
         width: 100%;
@@ -44,9 +68,13 @@
         }
       }
       .title {
+        padding: 8px 90px;
         color: #504f50;
         font-size: 14PX;
         font-weight: 500 !important;
+      }
+      .picker-title {
+        padding-top: 20px;
       }
       .user-name {
         input {
@@ -68,7 +96,8 @@
             border-top: none;
           }
           .weui-cell {
-            padding: 3px 0;
+            height: 100%;
+            padding: 8px 0;
             background-color: #C5B6D8;
             border-radius: 20px;
             border: none;
@@ -77,6 +106,10 @@
               color: #504f50;
               font-size: 14PX;
               font-weight: 500 !important;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 1;
+              overflow: hidden;
             }
           }
         }
@@ -87,7 +120,8 @@
             border-top: none;
           }
           .weui-cell {
-            padding: 3px 0;
+            height: 100%;
+            padding: 8px 0;
             background-color: #C5B6D8;
             border-radius: 20px;
             border: none;
@@ -105,6 +139,10 @@
           color: #504f50;
           font-size: 14PX;
           font-weight: 500 !important;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          overflow: hidden;
         }
       }
       .submit {
@@ -122,10 +160,17 @@
           font-size: 14PX;
           font-weight: 500 !important;
           background-color: #8F7EB3;
-          box-shadow: 1PX 1PX 0 0 #a293c1;
+          box-shadow: 0 2PX 0 #887ba5, 0 6PX 3PX rgba(0, 0, 0, 0.3);
           outline: none;
         }
       }
+    }
+    .fill {
+      height: 46px;
+    }
+    .active {
+      color: #615B66 !important;
+      background-color: rgba(143, 126, 179, 0.6) !important;
     }
   }
   .flower-one {
@@ -134,6 +179,7 @@
     position: fixed;
     left: 0;
     top: 160px;
+    animation: fadeIn 3s 1;
   }
   .flower-two {
     width: 96px;
@@ -141,6 +187,7 @@
     position: fixed;
     right: 0;
     top: 390px;
+    animation: fadeIn 3s 1;
   }
   .flower-three {
     width: 22px;
@@ -148,13 +195,15 @@
     position: absolute;
     left: 30px;
     bottom: 140px;
+    animation: fadeIn 3s 1;
   }
   .ring {
     width: 179px;
     height: 195px;
     position: fixed;
     left: 40px;
-    top: calc(~"88% - 200px - 80px - 16px + 220px")
+    top: calc(~"88% - 200px - 80px - 16px + 220px");
+    animation: fadeIn 3s 1;
   }
   .lzl {
     width: 281px;
@@ -162,5 +211,14 @@
     position: fixed;
     right: 0;
     bottom: 0;
+    animation: fadeIn 3s 1;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }

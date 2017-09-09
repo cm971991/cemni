@@ -1,7 +1,3 @@
-/**
- * Created by chang on 2017/5/16.
- */
-
 // 该模块的初始状态
 const state = {
   direction: 'forward', // 页面切换动画
@@ -34,6 +30,9 @@ const mutations = {
   },
   SET_CURRPATH (state, value) {
     state.currPath = value
+  },
+  SET_OPENID (state, value) {
+    state.openId = value
   },
   SET_ROUTE (state, route) {
     state.route = route

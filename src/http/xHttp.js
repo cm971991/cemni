@@ -6,7 +6,7 @@ let onlineApi = 'http://api.51pinzhi.cn/api/'
 // 测试接口地址
 // let testApi = 'http://10.10.141.79:8080/icompaign/' // icompaign/
 // let testApi = 'http://10.10.133.211:8080/' // icompaign/
-function successParse (res, load) {
+function successParse(res, load) {
   if (load) {
     Vue.$vux.loading.hide()
   }
@@ -16,7 +16,8 @@ function successParse (res, load) {
     return res.data
   }
 }
-function errorParse (ex, load) {
+
+function errorParse(ex, load) {
   if (load) {
     Vue.$vux.loading.hide()
   }
@@ -34,7 +35,7 @@ function errorParse (ex, load) {
   }
 }
 
-function send (url, method, body, options, load, loadMsg) {
+function send(url, method, body, options, load, loadMsg) {
   if (load) {
     Vue.$vux.loading.show(loadMsg)
   }
@@ -48,13 +49,12 @@ function send (url, method, body, options, load, loadMsg) {
         url = onlineApi + url
       }
       break
-    case 'testing':
     case 'development':
+      if (url.startsWith('/cemniApi')) {    // 同域名下还原请求地址
+        url = 'http://121.40.231.28:8080' + url.substring(9)
+      }
       break
     default:
-      // if (!url.startsWith('http')) {
-      //   url = testApi + url
-      // }
       break
   }
   const opts = {...options}
@@ -76,10 +76,10 @@ function send (url, method, body, options, load, loadMsg) {
 }
 
 export default {
-  get (url, options, {load = true, loadMsg = '加载中...'} = {}) {
+  get(url, options, {load = true, loadMsg = '加载中...'} = {}) {
     return send(url, 'get', null, options, load, loadMsg)
   },
-  post (url, body, options, {load = true, loadMsg = '加载中...'} = {}) {
+  post(url, body, options, {load = true, loadMsg = '加载中...'} = {}) {
     return send(url, 'post', body, options, load, loadMsg)
   }
 }

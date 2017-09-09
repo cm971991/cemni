@@ -26,15 +26,19 @@
     height: calc(~"100% - 750px");
     margin-top: 90px;
     background-color: aliceblue;
-    #app {
+    video {
+      width: 100%;
       height: 100%;
-      .container {
-        height: 100%;
-        .__cov-video-container {
-          height: 100%;
-        }
-      }
     }
+    //#app {
+    //  height: 100%;
+    //  .container {
+    //    height: 100%;
+    //    .__cov-video-container {
+    //      height: 100%;
+    //    }
+    //  }
+    //}
   }
   .flower-one {
     width: 148px;
@@ -43,14 +47,16 @@
     left: 0;
     top: 340px;
     z-index: 1;
+    animation: fadeIn 2s 1;
   }
   .flower-two {
     width: 157px;
     height: 70px;
     position: fixed;
     left: 0;
-    top: 755px;
+    //top: calc(~"100% - 1000px)");
     z-index: 1;
+    animation: fadeIn 3s 1;
   }
   .flower-three {
     width: 73px;
@@ -59,6 +65,7 @@
     right: 0;
     top: 346px;
     z-index: 1;
+    animation: fadeIn 3s 1;
   }
   .ring {
     width: 118px;
@@ -66,6 +73,7 @@
     position: fixed;
     left: 40px;
     bottom: 40px;
+    animation: fadeIn 2s 1;
   }
   .lzl {
     width: 353px;
@@ -73,11 +81,13 @@
     position: fixed;
     right: 0;
     bottom: 0;
+    z-index: 9147483647;
+    animation: fadeIn 3s 1;
   }
   .playGame {
     width: 100%;
     position: fixed;
-    bottom: 70px;
+    bottom: 90px;
     left: 0;
     text-align: center;
     button {
@@ -92,8 +102,17 @@
       font-size: 14PX;
       font-weight: 500 !important;
       background-color: #8F7EB3;
-      box-shadow: 1PX 1PX 0 0 #a293c1;
+      box-shadow: 0 2PX 0 #887ba5, 0 6PX 3PX rgba(0, 0, 0, 0.3);
       outline: none;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
     }
   }
 }

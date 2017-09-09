@@ -19,7 +19,7 @@
     }
     .gift-text {
       color: #504f50;
-      font-size: 14PX;
+      font-size: 18PX;
       font-weight: 500 !important;
     }
   }
@@ -30,7 +30,7 @@
     left: 0;
     text-align: center;
     button {
-      width: 270px;
+      width: 200px;
       margin-left: auto;
       margin-right: auto;
       padding: 14px 6px;
@@ -41,15 +41,24 @@
       font-size: 14PX;
       font-weight: 500 !important;
       background-color: #8F7EB3;
-      box-shadow: 1PX 1PX 0 0 #a293c1;
+      box-shadow: 0 2PX 0 #887ba5, 0 6PX 3PX rgba(0, 0, 0, 0.3);
       outline: none;
     }
     img.ring {
       width: 118px;
       height: 145px;
       position: absolute;
-      right: 90px;
+      right: 40px;
       bottom: -100px;
+      animation: fadeIn 3s 1;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 }

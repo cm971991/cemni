@@ -11,12 +11,12 @@ import global from './modules/global'
 
 Vue.use(Vuex)
 
-import main from '../pages/main.vue'
+import service from '../service/commonService'
 
 export default new Vuex.Store({
   // 组合各模块
   modules: {
-    main,
+    service,
     global
   },
   // 状态持久化插件
