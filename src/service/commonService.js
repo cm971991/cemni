@@ -34,8 +34,8 @@ const actions = {
           if (res.responseCode === '0000') {
             debugger
             if (res.userInfo.name && res.userInfo.name.length > 1) {
-              if (!res.userInfo.companyAddress) {
-                res.userInfo.companyAddress = ['']
+              if (!res.userInfo.companyAddress && res.userInfo.companyAddress.length >= 0) {
+                res.userInfo.companyAddress = []
               } else {
                 let city = res.userInfo.companyAddress
                 let area = city.substring(0, 4) + '00'
@@ -43,7 +43,7 @@ const actions = {
                 res.userInfo.companyAddress = [province, area, city]
               }
               if (!res.userInfo.userType) {
-                res.userInfo.userType = ['']
+                res.userInfo.userType = []
               }
             }
             resolve(res)

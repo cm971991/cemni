@@ -8,13 +8,13 @@
         <div class="gift">
             <img src="../assets/images/lottoBear/giftClose.png" title="小熊玩偶"/>
             <div>
-                <label class="gift-text">{{ lotteryName || '您未中奖' }}</label>
+                <label class="gift-text">{{ lotteryName || '今日奖品已领完' }}</label>
             </div>
         </div>
         <!-- endregion 礼物盒 -->
 
         <!-- region 领取按钮 -->
-        <div class="getGift">
+        <div class="getGift" v-show="buttonHide">
             <button @click="showDialog = winning" :disabled="received">{{ buttonText }}</button>
             <img class="ring" src="../assets/images/common/ringLeft.png"/>
         </div>
@@ -49,7 +49,8 @@
         received: false,    // 是否已领取奖品
         isJoin: false,      // 是否已参与过活动
         showDialog: false,  // 是否显示弹窗
-        buttonText: '领取奖品'
+        buttonText: '领取奖品',
+        buttonHide: true
       }
     },
     mounted() {
@@ -108,13 +109,19 @@
           activityNo: this.$utils.localStorage.get('activityNo')
         }).then(res => {
           console.log('joinActivity:', res)
+          debugger
           this.winning = res.winning
           this.received = res.received
           if (res.received) {
             this.buttonText = '已领取'
             this.lotteryName = res.prize ? '已获得' + res.prize : ''
           } else {
-            this.lotteryName = res.prize ? '获得' + res.prize : ''
+            if (!res.prize) {
+              this.buttonHide = false
+            } else {
+              this.buttonHide = true
+              this.lotteryName = '获得' + res.prize
+            }
           }
         })
       },

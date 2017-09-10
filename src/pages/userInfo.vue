@@ -199,7 +199,14 @@
         this.$store.dispatch('queryUserStatus', {openId: this.$utils.localStorage.get('openId')}).then(res => {
           console.log('queryUserStatus:', res)
           if (res.userInfo.name && res.userInfo.name.length > 1) {
+            debugger
             this.formData = res.userInfo
+            if (res.userInfo.companyAddress && res.userInfo.companyAddress.length > 0) {
+              this.areaData.companyAddress = res.userInfo.companyAddress
+            }
+            if (res.userInfo.userType && res.userInfo.userType.length > 0) {
+              this.userTypeData.userType = res.userInfo.userType
+            }
           }
           this.userStatus = res.userStatus
         })
